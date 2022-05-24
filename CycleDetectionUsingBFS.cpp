@@ -46,22 +46,23 @@ class Sol
 
 int main()
 {
-Sol s;
-int v,m;//number of vertices
+Sol s;//object of class Sol...
+int v,m;//number of vertices and edges..
 cout<<"Enter number of vertices : ";
 cin>>v;
 cout<<"\nEnter number of Edges ";
 cin>>m;
-vector<int> adj[v+1];//adjacency list
+vector<int> adj[v+1];//adjacency list...
 
-for(int i=1;i<=m;i++)
+for(int i=1;i<=m;i++)//reading edges...
 {
 int u,v;
 cin>>u>>v;
 adj[u].push_back(v);
 adj[v].push_back(u);
 }
-bool b=s.isCycle(v,adj);
+ 
+bool b=s.isCycle(v,adj);//function return's true if cycle exits otherwise false...
 if(b==true)
 cout<<"\ncycle detected ";
 else
